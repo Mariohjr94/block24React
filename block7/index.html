@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript fundamentals</title>
+    <!-- internal css -->
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #button {
+        text-align: center;
+        margin: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lock combination</h1>
+    <p id="combinationText"></p>
+    <div id="button">
+      <button>Destroy me</button>
+    </div>
+  </body>
+  <script>
+    //create 3 different. Each variable contains the corresponding result of calculation using a unique arithmetic operator
+    //create the alert that will provide the user with the combination and add the previously created variables to the message in the alert.
+
+    //combination numbers
+    const numOne = 5 + 5;
+    const numTwo = 2 * 2 * 10;
+    const numThree = numTwo - 1;
+
+    //alert
+    alert(
+      `You have received this message because you have been chosen to open an important vault. Here is the secret combination: ${numOne} - ${numTwo} - ${numThree}`
+    );
+
+    // creating text and applying styling to the paragraph
+    document.getElementById(
+      "combinationText"
+    ).innerText = `You have received this message because you have been chosen to open an important vault. Here is the secret combination: ${numOne}, ${numTwo}, ${numThree}`;
+
+    document
+      .getElementById("combinationText")
+      .setAttribute(
+        "style",
+        "color: white; background-color: gray; width: 50vw; margin: auto; padding: 2rem; border: 1px solid black;"
+      );
+
+    // destroying the combination
+
+    //funtion that will change the text with the combination
+    let destroyMe = () => {
+      document.getElementById("combinationText").innerHTML =
+        "Forget about me!!!";
+      document
+        .getElementById("combinationText")
+        .setAttribute(
+          "style",
+          "text-align: center; color: white; background-color: gray; width: 50vw; margin: auto; padding: 2rem; border: 1px solid black;"
+        );
+    };
+
+    //adding funtion to the button
+    document.getElementById("button").addEventListener("click", destroyMe);
+  </script>
+</html>
